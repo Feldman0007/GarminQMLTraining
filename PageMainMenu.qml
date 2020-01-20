@@ -6,6 +6,7 @@ PageDefault
 
     signal whereToClicked()
     signal viewMapClicked()
+
     //signal handlers for corousel wheel
 
     //--------------------------------------------------
@@ -34,26 +35,6 @@ PageDefault
             }
         }
 
-//        Rectangle
-//        {
-//            id: iRect
-//            height: 100
-//            width: 100
-
-//            color: "green"
-
-//            MouseArea
-//            {
-//                anchors.fill: parent
-
-//                onClicked:
-//                {
-//                    // This how you remove this from stack view
-//                    iStackView.pop();
-//                }
-//            }
-//        }
-
         ButtonDefault
         {
 
@@ -68,9 +49,15 @@ PageDefault
 
             onButtonClicked: whereToClicked()
 
-//            function executeWhereTo () {
+            onButtonPressed:
+            {
+                image: "icons/WhereTo_prsd.png"
+            }
 
-//            }
+            onButtonReleased:
+            {
+                image: "icons/WhereTo_nrml.png"
+            }
 
             Text
             {
@@ -98,6 +85,14 @@ PageDefault
             image: "icons/ViewMap_nrml.png"
 
             onButtonClicked: viewMapClicked()
+            onButtonPressed:
+            {
+                image: "icons/ViewMap_prsd.png"
+            }
+            onButtonReleased:
+            {
+                //image: "icons/ViewMap_nrml.png"
+            }
 
             Text
             {
@@ -114,6 +109,7 @@ PageDefault
         MenuWheel
         {
             anchors.top: parent.bottom
+            anchors.topMargin: -100
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom

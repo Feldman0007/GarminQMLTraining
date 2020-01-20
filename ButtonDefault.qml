@@ -6,6 +6,8 @@ Item
 
     property string image: ""
     signal buttonClicked()
+    signal buttonPressed()
+    signal buttonReleased()
 
     Image
     {
@@ -18,9 +20,8 @@ Item
     {
         id: iButtonArea
         anchors.fill: parent
-        onClicked:
-        {
-            iGenericButton.buttonClicked()
-        }
+        onClicked:{iGenericButton.buttonClicked()}
+        onPressed:{iGenericButton.buttonPressed()}
+        onReleased:{iGenericButton.buttonReleased()}
     }
 }

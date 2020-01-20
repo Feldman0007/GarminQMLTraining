@@ -16,66 +16,53 @@ ApplicationWindow {
 
         anchors.fill: parent
 
-        initialItem: iPageMainMenu
+        initialItem: iComponentMainMenu
+        visible: true
 
-        PageMainMenu
+        Component
         {
-            id: iPageMainMenu
-            anchors.fill: parent
+            id: iComponentMainMenu
+            PageMainMenu
+            {
+                id: iPageMainMenu
+                anchors.fill: parent
 
-            onWhereToClicked: {
-                console.log("Where to button was pressed")
-                iStackView.push(iPageWhereTo)
+                onWhereToClicked:
+                {
+                    console.log("Where to button was pressed")
+                    iStackView.push(iComponentWhereTo)
+                    stackView: iStackView
+                }
+
+                onViewMapClicked:
+                {
+                    console.log("View Map button was pressed")
+                    iStackView.push(iComponentViewMap)
+                }
             }
-            onViewMapClicked: {
-                console.log("View Map button was pressed")
-                iStackView.push(iPageViewMap)
+        }
+
+        Component
+        {
+            id: iComponentViewMap
+
+            PageViewMap
+            {
+                id: iPageViewMap
+                anchors.fill: parent
             }
         }
-        PageViewMap
+
+        Component
         {
-            id: iPageViewMap
-            anchors.fill: parent
+            id: iComponentWhereTo
+            PageWhereTo
+            {
+                id: iPageWhereTo
+                anchors.fill: parent
+            }
         }
-        PageWhereTo
-        {
-            id: iPageWhereTo
-            anchors.fill: parent
-        }
-
-
-
-        // iComponent should be replaced by PageMainMenu
-//        initialItem: iComponent
-
-//        Component
-//        {
-//            id: iComponent
-//            Rectangle
-//            {
-//                id: iRect
-//                height: 100
-//                width: 100
-
-//                color: "red"
-
-//                MouseArea
-//                {
-//                    anchors.fill: parent
-
-//                    onClicked:
-//                    {
-//                        // this is how to push pages/items on this stack
-//                        // QRL for the qml is given, properties of the qml
-//                        // page are then passed in
 //                        iStackView.push( "qrc:/PageMainMenu.qml",
-//                                    {
-//                                        stackView: iStackView
-//                                    }
-//                                    );
-//                    }
-//                }
-//            }
-//        }
+
     }
 }
