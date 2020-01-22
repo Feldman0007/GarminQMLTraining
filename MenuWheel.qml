@@ -1,10 +1,9 @@
-import QtQuick 2.13
-import QtQuick.Shapes 1.14
+import QtQuick 2.10
+import QtQuick.Shapes 1.0
 
 Item {
-
     id: iMenuWheel
-
+    signal compassClickDetected()
     // This handles the carousel for the menu wheel
     // Some tweaks may be required
     Shape
@@ -50,16 +49,26 @@ Item {
             ButtonDefault
             {
                 anchors.fill: parent
-                onButtonClicked: console.log("not yet implemented")
+                onButtonClicked:
+                {
+                    if (model.name === "Compass")
+                    {
+                        compassClickDetected()
+                    }
+                    else
+                    {
+                        console.log("not yet implemented")
+                    }
+                }
             }
         }
 
         path: Path
         {
             startX: 50; startY: 150
-
             PathArc
             {
+
                 x: 750; y: 210
                 radiusX: 325; radiusY: 190
             }

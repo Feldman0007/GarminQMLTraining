@@ -55,7 +55,8 @@
         <file>icons/map_wheel_prssd.png</file>
         <file>icons/map_wheel_slctd.png</file>
         <file>MenuWheel.qml</file>
-        <file>PageWhereTo.qml</file>
         <file>PageViewMap.qml</file>
+        <file>PageWhereTo.qml</file>
+        <file>PageCompass.qml</file>
     </qresource>
 </RCC>

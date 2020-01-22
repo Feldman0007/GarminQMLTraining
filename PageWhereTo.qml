@@ -1,15 +1,20 @@
 import QtQuick 2.0
 
 PageDefault {
-    property var stackView: null
     name: "Where to Page"
 
     Rectangle
     {
         id: iBackButton
-        width: 100
-        height: 100
-        color: "green"
+        width: 15
+        height: 15
+        color: "grey"
+        z: 100
+
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.topMargin: 5
+        anchors.rightMargin: 5
 
         MouseArea
         {
@@ -23,8 +28,8 @@ PageDefault {
         id: iTitleBar
         color: "black"
         width: parent.width
-        height: 30
         anchors.top: parent.top
+        height: 30
 
         Text
         {
@@ -36,31 +41,24 @@ PageDefault {
             anchors.verticalCenter: parent.verticalCenter
         }
     }
-    Rectangle
-    {
-        id: iGridBounds
-        anchors
-        {
-            top: iTitleBar.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
 
         GridView
         {
             id: iGridView
-            anchors.fill: parent
-            cellWidth: parent.width / 3
-            cellHeight: parent.height / 3
+            anchors.top: iTitleBar.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+
+            cellWidth: width / 3
+            cellHeight: height / 2
+
 
             model: ListModel
             {
-                id: iGridViewModel
-
                 ListElement {
                     name: "Address"
-                    icon: "icons/D_icon_address_nrml.png"
+                    icon: "qrc:/icons/D_icon_address_nrml.png"
                 }
                 ListElement {
                     name: "Home"
@@ -84,18 +82,69 @@ PageDefault {
                 }
             }
 
-            delegate: Rectangle {
-                height: iGridView.cellHeight
-                width: iGridView.cellWidth
-                color: "black"
+            delegate: Component{
 
-                Text
+                Item
                 {
+                    Rectangle
+                    {
+                        anchors.fill: parent
+                        color: "black"
+                        border.color: "grey"
+                        border.width: .5
+                    }
+
+                    width: iGridView.cellWidth
+                    height: iGridView.cellHeight
+                    ButtonDefault
+                    {
+                        id: iWhereToMenuButton
+
+                        image: model.icon
+                        anchors.fill: parent
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        onButtonClicked:
+                        {
+                            if (model.name === "Address"){
+                                console.log("Address button pushed")
+                               // iStackView.push(address page) we could be pushing a page here but don't got time
+                            }
+                            else if(model.name === "Home")
+                            {
+                                console.log("Home button pushed")
+                            }
+                            else if(model.name === "Points of Interest")
+                            {
+                                console.log("POI button pushed")
+                            }
+                            else if(model.name === "Recently Found")
+                            {
+                                console.log("Recently Found button pushed")
+                            }
+                            else if(model.name === "Favorites")
+                            {
+                                console.log("Favorites button pushed")
+                            }
+                            else if(model.name === "Intersections")
+                            {
+                                console.log("Intersections button pushed")
+                            }
+                        }
+                    }
+                    Text
+                    {
+                        font.bold: true
+                        font.pixelSize: 20
+                        anchors.bottom: parent.bottom
+                        anchors.bottomMargin: 5
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        text: model.name
+                        color: "white"
+                    }
 
                 }
-
-
             }
+
+
         }
-    }
 }

@@ -3,7 +3,6 @@ import QtQuick 2.9
 Item
 {
     id: iGenericButton
-
     property string image: ""
     signal buttonClicked()
     signal buttonPressed()

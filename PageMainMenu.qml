@@ -2,23 +2,12 @@ import QtQuick 2.9
 
 PageDefault
 {
-    property var stackView: null
-
     signal whereToClicked()
     signal viewMapClicked()
+    signal compassClicked()
 
-    //signal handlers for corousel wheel
-
-    //--------------------------------------------------
-    // Inheritied Properties
-    //--------------------------------------------------
-
-    // This property comes from Page default
     name: "Main Menu"
 
-    //-------------------------------------------------
-    // Children
-    //-------------------------------------------------
     Rectangle
     {
         anchors.fill: parent
@@ -67,7 +56,6 @@ PageDefault
                 font.pointSize: 22
                 anchors.horizontalCenterOffset: 1
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.centerIn: parent.horizontalCenter
             }
 
         }
@@ -85,14 +73,14 @@ PageDefault
             image: "icons/ViewMap_nrml.png"
 
             onButtonClicked: viewMapClicked()
-            onButtonPressed:
-            {
-                image: "icons/ViewMap_prsd.png"
-            }
-            onButtonReleased:
-            {
-                //image: "icons/ViewMap_nrml.png"
-            }
+//            onButtonPressed:
+//            {
+//                image: "icons/ViewMap_prsd.png"
+//            }
+//            onButtonReleased:
+//            {
+//                //image: "icons/ViewMap_nrml.png"
+//            }
 
             Text
             {
@@ -102,17 +90,19 @@ PageDefault
                 font.pointSize: 21
                 anchors.horizontalCenterOffset: 1
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.centerIn: parent.horizontalCenter
+                //anchors.centerIn: parent.horizontalCenter
             }
         }
 
         MenuWheel
         {
+            id: iMenuWheel
             anchors.top: parent.bottom
             anchors.topMargin: -100
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
+            onCompassClickDetected: compassClicked()
         }
     }
 }

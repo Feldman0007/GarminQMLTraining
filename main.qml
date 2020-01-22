@@ -25,19 +25,19 @@ ApplicationWindow {
             PageMainMenu
             {
                 id: iPageMainMenu
-                anchors.fill: parent
 
                 onWhereToClicked:
                 {
-                    console.log("Where to button was pressed")
                     iStackView.push(iComponentWhereTo)
-                    stackView: iStackView
                 }
 
                 onViewMapClicked:
                 {
-                    console.log("View Map button was pressed")
                     iStackView.push(iComponentViewMap)
+                }
+                onCompassClicked:
+                {
+                    iStackView.push(iComponentCompass)
                 }
             }
         }
@@ -49,7 +49,6 @@ ApplicationWindow {
             PageViewMap
             {
                 id: iPageViewMap
-                anchors.fill: parent
             }
         }
 
@@ -59,10 +58,15 @@ ApplicationWindow {
             PageWhereTo
             {
                 id: iPageWhereTo
-                anchors.fill: parent
             }
         }
-//                        iStackView.push( "qrc:/PageMainMenu.qml",
-
+        Component
+        {
+            id: iComponentCompass
+            PageCompass
+            {
+                id: iPageCompass
+            }
+        }
     }
 }
