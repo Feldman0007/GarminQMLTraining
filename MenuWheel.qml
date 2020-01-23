@@ -4,41 +4,38 @@ import QtQuick.Shapes 1.0
 Item {
     id: iMenuWheel
     signal compassClickDetected()
-    // This handles the carousel for the menu wheel
-    // Some tweaks may be required
     Shape
-    {
-       ShapePath
        {
-          strokeWidth: 3
-          strokeColor: 'black'
-          fillColor: "#706c6c"
-          startX: -20; startY: 100
-          PathArc {
-             x: 820; y: 210
-             radiusX: 325; radiusY: 190
-             direction: PathArc.Clockwise
+          ShapePath
+          {
+             strokeWidth: 3
+             strokeColor: 'black'
+             fillColor: "#706c6c"
+             startX: -20; startY: 100
+             PathArc {
+                x: 820; y: 210
+                radiusX: 325; radiusY: 190
+                direction: PathArc.Clockwise
+             }
           }
        }
-    }
-    Shape
-    {
-       ShapePath
+       Shape
        {
-          strokeWidth: 3
-          strokeColor: 'white'
-          fillColor: "grey"
-          startX: 50; startY: 250
-          PathArc {
-             x: 750; y: 210
-             radiusX: 325; radiusY: 175
-             direction: PathArc.Clockwise
+          ShapePath
+          {
+             strokeWidth: 3
+             strokeColor: 'white'
+             fillColor: "grey"
+             startX: 50; startY: 250
+             PathArc {
+                x: 750; y: 210
+                radiusX: 325; radiusY: 175
+                direction: PathArc.Clockwise
+             }
           }
        }
-    }
     PathView
     {
-        // May not need to fill the whole parent
         anchors.fill: parent
 
         model: MenuWheelModel {}

@@ -6,8 +6,8 @@ PageDefault {
     Rectangle
     {
         id: iBackButton
-        width: 15
-        height: 15
+        width: 40
+        height: 20
         color: "grey"
         z: 100
 
@@ -15,6 +15,13 @@ PageDefault {
         anchors.top: parent.top
         anchors.topMargin: 5
         anchors.rightMargin: 5
+
+        Text
+        {
+           anchors.centerIn: parent
+           text: "Back"
+           color: "black"
+        }
 
         MouseArea
         {
