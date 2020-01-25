@@ -1,6 +1,6 @@
 import QtQuick 2.0
 
-PageDefault {
+iPageDefault {
     name: "Where to Page"
 
     Rectangle

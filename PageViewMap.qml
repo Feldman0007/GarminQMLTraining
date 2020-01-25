@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Shapes 1.0
 
-PageDefault
+iPageDefault
 {
     id: iPageViewMap
     name: "View Map Page"

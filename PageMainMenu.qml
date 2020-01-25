@@ -1,6 +1,6 @@
 import QtQuick 2.9
 
-PageDefault
+iPageDefault
 {
     signal whereToClicked()
     signal viewMapClicked()

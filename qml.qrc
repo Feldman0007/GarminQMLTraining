@@ -49,7 +49,6 @@
         <file>icons/D_icon_mercedes_nrml.png</file>
         <file>icons/D_icon_poi_nrml.png</file>
         <file>icons/D_icon_recentlyfnd_nrml.png</file>
-        <file>PageDefault.qml</file>
         <file>icons/map.png</file>
         <file>icons/map_wheel_dsbld.png</file>
         <file>icons/map_wheel_prssd.png</file>
@@ -58,5 +57,7 @@
         <file>PageViewMap.qml</file>
         <file>PageWhereTo.qml</file>
         <file>PageCompass.qml</file>
+        <file>CompassInfoSection.qml</file>
+        <file>iPageDefault.qml</file>
     </qresource>
 </RCC>
