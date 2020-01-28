@@ -1,10 +1,11 @@
 import QtQuick 2.0
 import QtQuick.Shapes 1.0
 
-iPageDefault
+Item
 {
     id: iPageViewMap
-    name: "View Map Page"
+    //name: "View Map Page"
+    anchors.fill: parent
     state: "DISABLE_MENU_WHEEL"
 
     function toggleMenuWheel()
