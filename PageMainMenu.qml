@@ -1,12 +1,13 @@
 import QtQuick 2.9
 
-iPageDefault
+Item
 {
     signal whereToClicked()
     signal viewMapClicked()
     signal compassClicked()
 
-    name: "Main Menu"
+    //name: "Main Menu"
+    anchors.fill: parent
 
     Rectangle
     {
