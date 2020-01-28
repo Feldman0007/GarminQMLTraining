@@ -58,6 +58,5 @@
         <file>PageWhereTo.qml</file>
         <file>PageCompass.qml</file>
         <file>CompassInfoSection.qml</file>
-        <file>iPageDefault.qml</file>
     </qresource>
 </RCC>
