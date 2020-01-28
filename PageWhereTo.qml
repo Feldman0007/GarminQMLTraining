@@ -1,7 +1,9 @@
 import QtQuick 2.0
 
-iPageDefault {
-    name: "Where to Page"
+Item
+{
+    //name: "Where to Page"
+    anchors.fill: parent
 
     Rectangle
     {
