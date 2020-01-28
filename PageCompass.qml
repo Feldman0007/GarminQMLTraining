@@ -1,9 +1,9 @@
 import QtQuick 2.0
 
-iPageDefault
+Item
 {
-    name: "Compass Page"
-
+    //name: "Compass Page"
+    anchors.fill: parent
     Rectangle
     {
         id: iBackButton
